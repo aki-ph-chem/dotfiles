@@ -4,6 +4,15 @@ local wezterm = require 'wezterm'
 -- this table will hold the configuration
 local config = {}
 
+-- window
+config.initial_cols = 170
+config.initial_rows = 52
+config.window_padding = {
+    left = 0,
+    right = 0,
+    top = 0,
+    bottom = 0,
+}
 --   
 if wezterm.config_builder then
     config = wezterm.config_builder()
@@ -20,8 +29,7 @@ config.colors = {
   selection_bg = 'rgba(50% 50% 50% 50%)',
 }
 -- transparent background
-config.window_background_opacity = 0.5
-
+config.window_background_opacity = 0.79
 
 -- keybinding
 
@@ -38,6 +46,13 @@ local function move_nth_tab()
     end
 end
 move_nth_tab()
+
+-- toggle fullscreen
+table.insert(config.keys, {
+  key = 'n',
+  mods = 'SHIFT|CTRL',
+  action = wezterm.action.ToggleFullScreen,
+})
 
 -- return configuration to wezterm
 return config
