@@ -2,6 +2,9 @@
 
 setting file(Lua) of wezterm
 
+- References
+    - API reference of keybind: https://wezfurlong.org/wezterm/config/lua/keyassignment/index.html
+
 ## keybind
 
 1. move tab
