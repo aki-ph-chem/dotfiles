@@ -22,5 +22,22 @@ config.colors = {
 -- transparent background
 config.window_background_opacity = 0.5
 
+
+-- keybinding
+
+config.keys = {}
+
+-- move to n-1 th Tab: ALT + n  
+local function move_nth_tab()
+    for i = 1, 8, 1 do
+        table.insert(config.keys, {
+        key = tostring(i),
+        mods = 'ALT',
+        action = wezterm.action.ActivateTab(i - 1)
+        })
+    end
+end
+move_nth_tab()
+
 -- return configuration to wezterm
 return config
