@@ -14,8 +14,8 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-#set $term xfce4-terminal 
-set $term wezterm  
+set $term xfce4-terminal 
+#set $term wezterm  
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -256,3 +256,6 @@ bindsym F5 exec brightnessctl set 5%+
 bindsym Print exec grim ~/Pictures/PtrSc/Screenshot_$(date '+%Y-%m-%d-%H:%M:%S').png 
 
 include /etc/sway/config.d/
+
+# polkit
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
