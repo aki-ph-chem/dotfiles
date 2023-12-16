@@ -19,3 +19,4 @@ config files
 ## sway(tiling window manager)
 
 - [sway](./sway)
+    - [waybar](./sway/waybar)
