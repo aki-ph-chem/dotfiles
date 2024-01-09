@@ -13,9 +13,21 @@ set $left h
 set $down j
 set $up k
 set $right l
+
 # Your preferred terminal emulator
 set $term xfce4-terminal 
 #set $term wezterm  
+# default size of xfce4-terminal
+for_window [app_id="xfce4-terminal"] {
+    floating_minimum_size 1880 x 990
+} 
+
+# for file manager thunar
+for_window [app_id="thunar"] {
+    floating_minimum_size 580 x 350
+    floating enable
+} 
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -27,7 +39,8 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
-output * bg /home/aki/Pictures/kabe/kde/2902731.png fill
+output * bg /home/aki/Pictures/kabe/kde/png.png fill
+
 #
 # Example configuration:
 #
@@ -235,6 +248,11 @@ exec fcitx5 &
 
 # for xfce4-appfinder
 bindsym $mod+z exec xfce4-appfinder
+for_window [app_id="xfce4-appfinder"] {
+    floating enable
+    resize set 400 700 
+} 
+
 #bindsym $mod+z exec rofi 
 
 # tap to click for lap tocp touch pad
