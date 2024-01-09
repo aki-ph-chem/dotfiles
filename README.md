@@ -19,3 +19,4 @@ The config files have become so cluttered that they have been consolidated into 
 ## sway(tiling window manager)
 
 - [sway](./sway)
+    - [waybar](./sway/waybar)

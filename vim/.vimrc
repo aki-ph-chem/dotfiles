@@ -28,6 +28,8 @@ call plug#begin()
 Plug 'cohama/lexima.vim'
 "Plug 'preservim/nerdtree'
 Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'ivechan/gtags.vim'
@@ -37,8 +39,12 @@ call plug#end()
 map <C-g> :Gtags 
 map <C-h> :Gtags -f %<CR>
 map <C-j> :GtagsCursor<CR>
-map <C-n> :cn<CR>
+"map <C-n> :cn<CR>
 map <C-p> :cp<CR>
+
+" airline config
+let g:airline#extensions#tabline#enabled = 1 "show tabline
+"let g:airline_powerline_fonts = 1
 
 " load plugins
 packloadall
@@ -47,12 +53,19 @@ silent! helptags ALL
 " completion of file name
 set wildmenu
 
+<<<<<<< HEAD
 " autostart NERDTree
 " autocmd VimEnter * NERDTree
 " toggle NERDTree by 'Nt'
 " command Nt NERDTreeToggle
 " show hidden files by NERDTree
 " let NERDTreeShowHidden=1
+=======
+" Fern config
+" open filer  by Fe 
+nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>
+let g:fern#renderer = 'nerdfont'
+>>>>>>> origin/main
 
 " resize window
 " +10 horizontal
