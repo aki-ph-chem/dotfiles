@@ -26,7 +26,8 @@ highlight EndOfBuffer ctermbg=none
 " install plugin by Vim Plug 
 call plug#begin()
 Plug 'cohama/lexima.vim'
-Plug 'preservim/nerdtree'
+"Plug 'preservim/nerdtree'
+Plug 'lambdalisue/fern.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'ivechan/gtags.vim'
@@ -49,9 +50,9 @@ set wildmenu
 " autostart NERDTree
 " autocmd VimEnter * NERDTree
 " toggle NERDTree by 'Nt'
-command Nt NERDTreeToggle
+" command Nt NERDTreeToggle
 " show hidden files by NERDTree
-let NERDTreeShowHidden=1
+" let NERDTreeShowHidden=1
 
 " resize window
 " +10 horizontal
