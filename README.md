@@ -20,3 +20,7 @@ The config files have become so cluttered that they have been consolidated into 
 
 - [sway](./sway)
     - [waybar](./sway/waybar)
+
+## rofi(lanucher)
+
+- [rofi](./rofi)
