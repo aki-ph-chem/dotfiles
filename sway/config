@@ -13,20 +13,15 @@ set $left h
 set $down j
 set $up k
 set $right l
-
 # Your preferred terminal emulator
 set $term xfce4-terminal 
-#set $term wezterm  
-# default size of xfce4-terminal
 for_window [app_id="xfce4-terminal"] {
-    floating_minimum_size 1880 x 990
+    floating_minimum_size 1880 x 1080 
 } 
 
-# for file manager thunar
-for_window [app_id="thunar"] {
-    floating_minimum_size 580 x 350
-    floating enable
-} 
+for_window [class="Pgopher"] {
+    floating_minimum_size 1880 x 1000 
+}
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -36,11 +31,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-
-#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-
-output * bg /home/aki/Pictures/kabe/kde/png.png fill
-
+output * bg ~/Pictures/kabe/kde/2902654.jpg fill
 #
 # Example configuration:
 #
@@ -104,16 +95,10 @@ output * bg /home/aki/Pictures/kabe/kde/png.png fill
 # Moving around:
 #
     # Move your focus around
-    #bindsym $mod+$left focus left
-    #bindsym $mod+$down focus down
-    #bindsym $mod+$up focus up
-    #bindsym $mod+$right focus right
-
     bindsym Mod1+$left focus left
     bindsym Mod1+$down focus down
     bindsym Mod1+$up focus up
     bindsym Mod1+$right focus right
-
     # Or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
@@ -196,11 +181,6 @@ output * bg /home/aki/Pictures/kabe/kde/png.png fill
     bindsym $mod+minus scratchpad show
 #
 # Resizing containers:
-# Super + r -> resize mode
-# j: height grow 
-# k: height shrink 
-# l: width grow 
-# h: width shrink 
 #
 mode "resize" {
     # left will shrink the containers width
@@ -229,31 +209,19 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    #position top
+    # position top
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    #status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-    swaybar_command waybar   
+    # status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+    swaybar_command waybar
 
     colors {
-        #statusline #ffffff
-        #background #323232
-        #inactive_workspace #32323200 #32323200 #5c5c5c
+        statusline #ffffff
+        background #323232
+        inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }
-
-# for fcitx: Jpanese input method
-exec fcitx5 &
-
-# for xfce4-appfinder
-bindsym $mod+z exec xfce4-appfinder
-for_window [app_id="xfce4-appfinder"] {
-    floating enable
-    resize set 400 700 
-} 
-
-#bindsym $mod+z exec rofi 
 
 # tap to click for lap tocp touch pad
 input type:touchpad {
@@ -261,19 +229,21 @@ input type:touchpad {
     natural_scroll enabled
 }  
 
-# vluem control by alt + f2(down) , alt + f3(up) ,alt + f1(mute)
+# bindsym $mod+z exec xfce4-appfinder
+bindsym $mod+z exec rofi -show drun 
+
+exec fcitx5 &
+
 bindsym F1 exec pactl -- set-sink-mute @DEFAULT_SINK@ toggle 
-bindsym F2 exec pactl -- set-sink-volume @DEFAULT_SINK@ -5% 
-bindsym F3 exec pactl -- set-sink-volume @DEFAULT_SINK@ +5% 
-# display brightness
-# need to install brightnessctl
-bindsym F4 exec brightnessctl set 5%-
-bindsym F5 exec brightnessctl set 5%+
+bindsym F2 exec pactl -- set-sink-volume @DEFAULT_SINK@ -5%
+bindsym F3 exec pactl -- set-sink-volume @DEFAULT_SINK@ +5%
 
-# screen shot
-bindsym Print exec grim ~/Pictures/PtrSc/Screenshot_$(date '+%Y-%m-%d-%H:%M:%S').png 
+bindsym F5 exec brightnessctl set 5%-
+bindsym F6 exec brightnessctl set 5%+
 
-include /etc/sway/config.d/
+exec wl-paste -t text --watch clipman store --no-persist
 
-# polkit
+# for polkit
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+include /etc/sway/config.d/*
