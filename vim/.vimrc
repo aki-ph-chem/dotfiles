@@ -26,7 +26,6 @@ highlight EndOfBuffer ctermbg=none
 " install plugin by Vim Plug 
 call plug#begin()
 Plug 'cohama/lexima.vim'
-"Plug 'preservim/nerdtree'
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
@@ -53,19 +52,20 @@ silent! helptags ALL
 " completion of file name
 set wildmenu
 
-<<<<<<< HEAD
-" autostart NERDTree
-" autocmd VimEnter * NERDTree
-" toggle NERDTree by 'Nt'
-" command Nt NERDTreeToggle
-" show hidden files by NERDTree
-" let NERDTreeShowHidden=1
-=======
+" About Fern
+" j,k : cursor Up/Down 
+" l/h: open directory/ clse directory
+" Ctrl + m: open file
+" Ctrl + h: move to parent direcotry
+" Enter: open file
+"
 " Fern config
-" open filer  by Fe 
+" toggle Fern by Ctrl + n
 nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>
+" set font as nerdfont
 let g:fern#renderer = 'nerdfont'
->>>>>>> origin/main
+" show hidden file
+let g:fern#default_hidden=1
 
 " resize window
 " +10 horizontal
