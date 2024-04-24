@@ -49,6 +49,7 @@ button:hover {
 }
 
 #workspaces button {
+    border-radius: 10px 10px 10px 10px;
     padding: 0 5px;
     background-color: transparent;
     color: #ffffff;
@@ -108,10 +109,12 @@ button:hover {
 }
 
 #clock {
+    border-radius: 10px 10px 10px 10px;
     background-color: #64727D;
 }
 
 #battery {
+    border-radius: 10px 10px 10px 10px;
     background-color: #90b1b1;
     color: #000000;
 }
@@ -156,10 +159,12 @@ label:focus {
 }
 
 #backlight {
+    border-radius: 10px 10px 10px 10px;
     background-color: #90b1b1;
 }
 
 #network {
+    border-radius: 10px 10px 10px 10px;
     background-color: #90b1b1;
 }
 
@@ -168,6 +173,7 @@ label:focus {
 }
 
 #pulseaudio {
+    border-radius: 10px 10px 10px 10px;
     background-color: #45adad;
     color: #000000;
 }
@@ -209,6 +215,7 @@ label:focus {
 }
 
 #tray {
+    border-radius: 10px 10px 10px 10px;
     background-color: #90b1b1;
 }
 
@@ -248,10 +255,11 @@ label:focus {
 }
 
 #language {
+    border-radius: 10px 10px 10px 10px;
     background-color: #90b1b1;
     color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
+    padding: 0 10px;
+    margin: 0 1px;
     min-width: 16px;
 }
 
