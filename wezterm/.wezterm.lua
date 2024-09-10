@@ -58,5 +58,19 @@ table.insert(config.keys, {
 	action = wezterm.action.ToggleFullScreen,
 })
 
+-- zoom current pane
+table.insert(config.keys, {
+	key = "+",
+	mods = "CTRL",
+	action = wezterm.action.TogglePaneZoomState,
+})
+-- disable default assignment of Ctrl + = (zoom current pane)
+-- to avoid confliction with vim keybinding
+table.insert(config.keys, {
+	key = "=",
+	mods = "CTRL",
+	action = wezterm.action.DisableDefaultAssignment,
+})
+
 -- return configuration to wezterm
 return config
