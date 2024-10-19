@@ -14,25 +14,46 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term xfce4-terminal 
+set $term wezterm
 
-for_window [app_id="xfce4-terminal"] {
-    floating_minimum_size 1880 x 1080 
-} 
+# for_window [app_id="xfce4-terminal"] {
+#   floating_minimum_size 1880 x 1080
+#}
 
+# for_window [class="Pgopher"] {
+#     floating_minimum_size 1320 x 756
+# }
+
+# for PGOPHER
 for_window [class="Pgopher"] {
-     floating_minimum_size 1320 x 756 
+    floating enable
+}
+
+#for Wezterm
+#   for_window [app_id="org.wezfurlong.wezterm"] {
+#       floating enable
+#   }
+
+#for Google Chrome
+for_window [class="Google-chrome"] {
+    floating enable
+}
+
+#for Thunderbird
+for_window [app_id="hunderbird"] {
+    floating enable
 }
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/kabe/kde/2902654.jpg fill
+output * bg ~/Pictures/kabe/lwalpapers/wallpapers/b-285.jpg fill
+#output * bg ~/Pictures/kabe/lwalpapers/wallpapers/b-326.jpg fill
 #
 # Example configuration:
 #
@@ -78,7 +99,7 @@ output * bg ~/Pictures/kabe/kde/2902654.jpg fill
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    # bindsym $mod+d exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -228,21 +249,20 @@ bar {
 input type:touchpad {
     tap enabled
     natural_scroll enabled
-}  
+}
 
 # for thinkpad track point
 input type:pointer {
     accel_profile flat
-    pointer_accel 0.3
-    scroll_factor 0.5
+    pointer_accel 0.7
+    scroll_factor 0.6
 }
 
 # bindsym $mod+z exec xfce4-appfinder
-bindsym $mod+z exec rofi -show drun 
-
+bindsym $mod+z exec rofi -show drun
 exec fcitx5 &
 
-bindsym F1 exec pactl -- set-sink-mute @DEFAULT_SINK@ toggle 
+bindsym F1 exec pactl -- set-sink-mute @DEFAULT_SINK@ toggle
 bindsym F2 exec pactl -- set-sink-volume @DEFAULT_SINK@ -5%
 bindsym F3 exec pactl -- set-sink-volume @DEFAULT_SINK@ +5%
 
@@ -253,5 +273,23 @@ exec wl-paste -t text --watch clipman store --no-persist
 
 # for polkit
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# config of swayidle
+exec swayidle -w \
+    before-sleep 'swaylock \
+	--screenshots \
+	--clock \
+	--indicator \
+	--indicator-radius 100 \
+	--indicator-thickness 7 \
+	--effect-blur 7x5 \
+	--effect-vignette 0.5:0.5 \
+	--ring-color bb00cc \
+	--key-hl-color 880033 \
+	--line-color 00000000 \
+	--inside-color 00000088 \
+	--separator-color 00000000 \
+	--grace 2 \
+	--fade-in 1'
 
 include /etc/sway/config.d/*
