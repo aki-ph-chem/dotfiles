@@ -14,7 +14,8 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term wezterm
+#set $term wezterm
+set $term xfce4-terminal
 
 # for_window [app_id="xfce4-terminal"] {
 #   floating_minimum_size 1880 x 1080
@@ -44,6 +45,22 @@ for_window [app_id="hunderbird"] {
     floating enable
 }
 
+for_window [app_id="ristretto"] {
+    floating enable
+}
+
+for_window [app_id="thunar"] {
+    floating enable
+}
+
+for_window [app_id="python3"] {
+    floating enable
+}
+
+for_window [class="vlc"] {
+    floating enable
+}
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -52,7 +69,7 @@ for_window [app_id="hunderbird"] {
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/kabe/lwalpapers/wallpapers/b-285.jpg fill
+output * bg ~/Pictures/kabe/lwalpapers/wallpapers/b-294.jpg fill
 #output * bg ~/Pictures/kabe/lwalpapers/wallpapers/b-326.jpg fill
 #
 # Example configuration:
