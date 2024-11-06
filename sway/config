@@ -69,8 +69,7 @@ for_window [class="vlc"] {
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/kabe/lwalpapers/wallpapers/b-294.jpg fill
-#output * bg ~/Pictures/kabe/lwalpapers/wallpapers/b-326.jpg fill
+output * bg ~/Pictures/kabe/my_favorite/starry_4.jpg fill
 #
 # Example configuration:
 #
