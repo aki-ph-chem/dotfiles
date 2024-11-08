@@ -262,9 +262,11 @@ bar {
 }
 
 # tap to click for lap tocp touch pad
+# disable touchpad while typing
 input type:touchpad {
     tap enabled
     natural_scroll enabled
+    dwt enable disable-while-typing
 }
 
 # for thinkpad track point
