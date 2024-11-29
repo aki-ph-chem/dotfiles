@@ -1,6 +1,6 @@
 # config of prompt
 
-PS1='\[\e[1;36m\]\[\e[m\] \[\e[1;34m\]\t\[\e[m\] \[\e[1;36m\]😻\[\e[m\] \[\e[1;36m\] \W\[\e[m\] \[\e[1;31m\]$(__git_ps1 "(%s)")\[\e[m\] \n \$ '
+PS1='\[\e[1;36m\]\[\e[m\] \[\e[1;34m\]\t\[\e[m\] \[\e[1;36m\]🐗\[\e[m\] \[\e[1;36m\] \W\[\e[m\] \[\e[1;31m\]$(__git_ps1 "(%s)")\[\e[m\] \n \$ '
 #PS1='\[\e[1;36m\]😺🐰\[\e[m\] \[\e[1;34m\]\t\[\e[m\] \[\e[1;36m\]😽🐰\[\e[m\] \[\e[1;36m\] \W\[\e[m\] \[\e[1;31m\]$(__git_ps1 "(%s)")\[\e[m\] \n \$ '
 #PS1='\[\e[1;36m\]🐰\[\e[m\] \[\e[1;34m\]\t\[\e[m\] \[\e[1;36m\]🐰\[\e[m\] \[\e[1;36m\] \W\[\e[m\] \[\e[1;31m\]\[\e[m\] \n \$ '
 
@@ -13,7 +13,7 @@ alias fgrep='fgrep --colour=auto'
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# cargo run --bin  
+# cargo run --bin
 
 alias Car='cargo run'
 alias Cab='cargo build'
@@ -31,15 +31,11 @@ alias open='thunar'
 # PATH to pgopher
 #export PATH=$PATH:"$HOME/.Pgo"
 
-# Rscript 
-
-alias rs='Rscript'
-
-# caps lock -> ctrl 
+# caps lock -> ctrl
 # setxkbmap -option ctrl:nocaps
 # cpas lock <-> ctrl
 # setxkbmap -option ctrl:swapcaps
-# reset caps lock 
+# reset caps lock
 # setxkbmap -option
 
 # copy from stdoout
@@ -72,12 +68,12 @@ export PATH=$PATH:"$HOME/.local/bin"
 #export PATH="$PYENV_ROOT/bin:$PATH"
 #eval "$(pyenv init --path)"
 
-# bash key bind emacs -> vi 
+# bash key bind emacs -> vi
 set -o vi
 # bash key bind vi -> emacs
 #set -o emacs
 
-# ecs->jj 
+# ecs->jj
 
 bind '"jj":vi-movement-mode'
 
@@ -86,16 +82,6 @@ bind '"jj":vi-movement-mode'
 alias texcli='tex_rs'
 # My tool for pick up coordinates
 alias pickco='pick_co'
-
-# 内蔵キーボードの無効化
-alias diskey='xinput -disable "AT Translated Set 2 keyboard"' 
-# 内蔵キーボードの再有効化
-alias enkey='xinput -enable "AT Translated Set 2 keyboard"' 
-
-# トラックパッドの無効化
-alias dispad='xinput -disable "ELAN1300:00 04F3:3087 Touchpad"' 
-# トラックパッドの有効化
-alias enpad='xinput -enable "ELAN1300:00 04F3:3087 Touchpad"' 
 
 # keymapの変更
 # xmodmap ~/.Xmodmap
@@ -148,6 +134,7 @@ ppng() {
 #$(luarocks path)
 
 # fuzzy finder
+eval "$(fzf --bash)"
 
 ## for nvim
 fvi() {
@@ -167,3 +154,36 @@ fvi() {
 alias im='img2sixel'
 
 # grim: screen shot
+# for lock screen
+alias lock='swaylock \
+	--screenshots \
+	--clock \
+	--indicator \
+	--indicator-radius 100 \
+	--indicator-thickness 7 \
+	--effect-blur 7x5 \
+	--effect-vignette 0.5:0.5 \
+	--ring-color bb00cc \
+	--key-hl-color 880033 \
+	--line-color 00000000 \
+	--inside-color 00000088 \
+	--separator-color 00000000 \
+	--grace 2 \
+	--fade-in 1'
+
+alias bat-state='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
+alias mnu='rofi -show drun'
+#export PATH="$HOME/.profile:$PATH"
+alias spellchk='aspell --lang=en --mode=tex -a | grep ^&'
+
+# path to Neovim
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+
+# decide & open
+sldoc() {
+    fzf | awk '{print $1}' | sed 's/\[\(.*\)\]/\1/' |xargs -I@ pubs doc open @
+}
+
+exkey() {
+    awk '{print $1}' | sed 's/\[\(.*\)\]/\1/'
+}
