@@ -187,3 +187,18 @@ sldoc() {
 exkey() {
     awk '{print $1}' | sed 's/\[\(.*\)\]/\1/'
 }
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+case ":$PATH:" in
+    *:/home/aki/.juliaup/bin:*)
+        ;;
+
+    *)
+        export PATH=/home/aki/.juliaup/bin${PATH:+:${PATH}}
+        ;;
+esac
+
+# <<< juliaup initialize <<<
