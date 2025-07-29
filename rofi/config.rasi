@@ -149,4 +149,5 @@ configuration {
       sorting-method:    "name";
   }
 }
-@theme "Arc-Dark by leofa"
+/*@theme "Arc-Dark by leofa"
+*/
