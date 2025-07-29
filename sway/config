@@ -17,6 +17,11 @@ set $right l
 #set $term wezterm
 set $term xfce4-terminal
 
+# check app_id or class by
+#
+# $ swaymsg -t get_tree
+#
+
 # for_window [app_id="xfce4-terminal"] {
 #   floating_minimum_size 1880 x 1080
 #}
@@ -36,7 +41,7 @@ for_window [class="Pgopher"] {
 #   }
 
 #for Google Chrome
-for_window [class="Google-chrome"] {
+for_window [app_id="google-chrome"] {
     floating enable
 }
 
@@ -71,7 +76,7 @@ for_window [class="vlc"] {
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # $HOME/.config/sway/current_pic is the symbolic link to wallpaper
 #output * bg $HOME/.config/sway/current_pic fill
-output * bg $HOME/Pictures/kabe/my_favorite/starry_4.jpg fill
+output * bg $HOME/Pictures/kabe/my_favorite/starry_1.jpg fill
 #
 # Example configuration:
 #
@@ -323,7 +328,7 @@ exec swayidle -w \
 	--fade-in 1'
 
 # window opacity
-for_window [class=".*"] opacity 0.88
-for_window [app_id=".*"] opacity 0.88
+for_window [class=".*"] opacity 0.83
+for_window [app_id=".*"] opacity 0.83
 
 include /etc/sway/config.d/*
