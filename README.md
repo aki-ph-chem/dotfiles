@@ -29,6 +29,13 @@ $ cp git/contrib/completion/git-prompt.sh .git-prompt.sh
 
 - [sway](./sway)
     - [waybar](./sway/waybar)
+    - [kanshi](./sway/kanshi)
+
+run kanshi as below
+
+```bash
+$ kanshi &
+```
 
 ### rofi(lanucher)
 

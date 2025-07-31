@@ -1,0 +1,8 @@
+profile {
+    output eDP-1 disable
+    output "Dell Inc. DELL P2422H CBJFBR3"
+}
+
+profile {
+    output eDP-1 enable
+}
