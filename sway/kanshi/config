@@ -1,8 +1,13 @@
-profile {
+profile lab {
     output eDP-1 disable
     output "Dell Inc. DELL P2422H CBJFBR3"
 }
 
-profile {
+profile home {
+    output eDP-1 disable
+    output "Iiyama North America PL2493H 1187723012674"
+}
+
+profile default {
     output eDP-1 enable
 }
