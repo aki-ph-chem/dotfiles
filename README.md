@@ -31,10 +31,11 @@ $ cp git/contrib/completion/git-prompt.sh .git-prompt.sh
     - [waybar](./sway/waybar)
     - [kanshi](./sway/kanshi)
 
-run kanshi as below
+- run kanshi as systemd service:(WIP)
 
 ```bash
-$ kanshi &
+$ ln -s <PATH to this repo>/systemd_user/sway-session.target "$HOME/.config/systemd/user"
+$ ln -s <PATH to this repo>/systemd_user/kanshi.service "$HOME/.config/systemd/user"
 ```
 
 ### rofi(lanucher)

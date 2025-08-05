@@ -66,6 +66,10 @@ for_window [class="vlc"] {
     floating enable
 }
 
+for_window [class="Slack"] {
+    floating enable
+}
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -330,5 +334,13 @@ exec swayidle -w \
 # window opacity
 for_window [class=".*"] opacity 0.83
 for_window [app_id=".*"] opacity 0.83
+
+## how to exit sway session
+#
+# $ swaymsg exit
+#
+
+# systemd
+exec_always "systemctl --user start sway-session.target"
 
 include /etc/sway/config.d/*
