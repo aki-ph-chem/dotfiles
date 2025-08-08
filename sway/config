@@ -335,11 +335,19 @@ exec swayidle -w \
 for_window [class=".*"] opacity 0.83
 for_window [app_id=".*"] opacity 0.83
 
+# color of focused
+client.focused #45adad #45adad #ffffff #45adad #45adad
+# gaps between tails
+gaps inner 5
+gaps outer 2
+
+# swayfx specific
+corner_radius 10
+
 ## how to exit sway session
 #
 # $ swaymsg exit
 #
-
 # systemd
 exec_always "systemctl --user start sway-session.target"
 
