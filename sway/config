@@ -70,6 +70,14 @@ for_window [class="Slack"] {
     floating enable
 }
 
+for_window [class="Brave-browser"] {
+    floating enable
+}
+
+for_window [app_id="org.mozilla.firefox"] {
+    floating enable
+}
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
