@@ -29,7 +29,7 @@ config.colors = {
 	selection_bg = "rgba(50% 50% 50% 50%)",
 }
 -- transparent background
-config.window_background_opacity = 0.79
+config.window_background_opacity = 0.75
 
 -- font
 config.font = wezterm.font("FreeMono", { weight = "Bold", italic = false })
