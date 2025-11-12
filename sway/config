@@ -74,7 +74,11 @@ for_window [class="Brave-browser"] {
     floating enable
 }
 
-for_window [app_id="org.mozilla.firefox"] {
+for_window [app_id="chromium"] {
+    floating enable
+}
+
+for_window [app_id="firefox"] {
     floating enable
 }
 
@@ -305,8 +309,9 @@ input type:pointer {
     scroll_factor 0.6
 }
 
-# bindsym $mod+z exec xfce4-appfinder
+# keybind for rofi
 bindsym $mod+z exec rofi -show drun
+bindsym $mod+d exec rofi -show run 
 exec fcitx5 &
 
 bindsym F1 exec pactl -- set-sink-mute @DEFAULT_SINK@ toggle
