@@ -14,8 +14,8 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-#set $term wezterm
-set $term xfce4-terminal
+set $term wezterm
+#set $term xfce4-terminal
 
 # check app_id or class by
 #
@@ -92,7 +92,7 @@ for_window [app_id="firefox"] {
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # $HOME/.config/sway/current_pic is the symbolic link to wallpaper
 #output * bg $HOME/.config/sway/current_pic fill
-output * bg $HOME/Pictures/kabe/my_favorite/starry_1.jpg fill
+#output * bg $HOME/Pictures/kabe/my_favorite/starry_1.jpg fill
 #
 # Example configuration:
 #
@@ -205,7 +205,7 @@ output * bg $HOME/Pictures/kabe/my_favorite/starry_1.jpg fill
     # We just use 1-10 as the default.
 
     # workspace 1 => fixed to eDP-1
-    workspace 1 output eDP-1
+    #workspace 1 output eDP-1
 
     # workspace 2 ~  => DP-2
     #workspace 2 output DP-1
@@ -324,7 +324,7 @@ bindsym F6 exec brightnessctl set 5%+
 exec wl-paste -t text --watch clipman store --no-persist
 
 # for polkit
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # config of swayidle
 exec swayidle -w \
@@ -355,13 +355,13 @@ gaps inner 5
 gaps outer 2
 
 # swayfx specific
-corner_radius 10
+# corner_radius 10
 
 ## how to exit sway session
 #
 # $ swaymsg exit
 #
 # systemd
-exec_always "systemctl --user start sway-session.target"
+# exec_always "systemctl --user start sway-session.target"
 
 include /etc/sway/config.d/*
