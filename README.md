@@ -44,4 +44,16 @@ $ ln -s <PATH to this repo>/systemd_user/kanshi.service "$HOME/.config/systemd/u
 
 ### wlogout
 
+- install
+
+```bash
+yay -S wlogout
+```
+
+- config
+
+```bash
+ln -s <path to dis repository>/wlogout/ "$HOME/.config/wlogout/"
+```
+
 - [wlogout](./wlogout)
