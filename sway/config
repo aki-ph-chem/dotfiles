@@ -91,6 +91,7 @@ for_window [app_id="firefox"] {
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg $HOME/Pictures/kabe/my_favorite/starry_1.jpg fill
+exec ~/.azotebg
 #
 # Example configuration:
 #
