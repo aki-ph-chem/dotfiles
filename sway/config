@@ -90,9 +90,7 @@ for_window [app_id="firefox"] {
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# $HOME/.config/sway/current_pic is the symbolic link to wallpaper
-#output * bg $HOME/.config/sway/current_pic fill
-output * bg $HOME/Pictures/kabe/my_favorite/starry_1.jpg fill
+#output * bg $HOME/Pictures/kabe/my_favorite/starry_1.jpg fill
 #
 # Example configuration:
 #
