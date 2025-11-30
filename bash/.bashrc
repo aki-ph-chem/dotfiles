@@ -58,7 +58,9 @@ alias ri='nvim -R'
 # show git branch on bash prompt
 # see more on PS1
 
-source ~/.git-prompt.sh
+#source /usr/share/git/git-prompt.sh
+# git by home-manager
+source "$HOME/.nix-profile/share/git/contrib/completion/git-prompt.sh"
 
 # add path to ~/.local/bin
 export PATH=$PATH:"$HOME/.local/bin"
@@ -176,9 +178,6 @@ alias mnu='rofi -show drun'
 #export PATH="$HOME/.profile:$PATH"
 alias spellchk='aspell --lang=en --mode=tex -a | grep ^&'
 
-# path to Neovim
-export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
-
 # decide & open
 sldoc() {
     fzf | awk '{print $1}' | sed 's/\[\(.*\)\]/\1/' |xargs -I@ pubs doc open @
@@ -202,3 +201,5 @@ case ":$PATH:" in
 esac
 
 # <<< juliaup initialize <<<
+
+[ -f "/home/aki/.ghcup/env" ] && . "/home/aki/.ghcup/env" # ghcup-env
