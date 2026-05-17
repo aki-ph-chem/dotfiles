@@ -8,6 +8,11 @@ profile home {
     output "Iiyama North America PL2493H 1187723012674"
 }
 
+profile mirroring {
+    output eDP-1 enable position 0,0
+    output "*"  enable position 0,0
+}
+
 profile default {
     output eDP-1 enable
 }
