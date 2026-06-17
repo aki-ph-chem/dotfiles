@@ -1,0 +1,66 @@
+input {
+    keyboard {
+        xkb {
+            rules "evdev"
+            model "pc105"
+            layout "us"
+            variant ""
+            options ""
+        }
+    }
+    touchpad {
+        tap
+        disable-while-typing
+    }
+}
+
+binds {
+    Mod+Return { spawn "wezterm"; }
+    Mod+Shift+Q { close-window; }
+    Mod+Z { spawn "rofi" "-show" "drun"; }
+    Mod+D { spawn "rofi" "-show" "run"; }
+    F1 { spawn "pactl" "set-sink-mute" "@DEFAULT_SINK@" "toggle"; }
+    F2 { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "-5%"; }
+    F3 { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "+5%"; }
+    F5 { spawn "brightnessctl" "set" "5%-"; }
+    F6 { spawn "brightnessctl" "set" "5%+"; }
+
+    // workspace scroll
+    Mod+Comma { focus-workspace-previous; }
+    Mod+Period { focus-workspace-next; }
+    Mod+Home { focus-workspace-first; }
+    Mod+End { focus-workspace-last; }
+
+    // column navigation
+    Mod+H { focus-column-left; }
+    Mod+L { focus-column-right; }
+    Mod+J { focus-window-or-workspace-down; }
+    Mod+K { focus-window-or-workspace-up; }
+
+    // move window/column
+    Mod+Shift+H { move-column-left; }
+    Mod+Shift+L { move-column-right; }
+    Mod+Shift+J { move-window-down-or-to-workspace; }
+    Mod+Shift+K { move-window-up-or-to-workspace; }
+}
+
+spawn-at-startup "waypaper" "--restore"
+spawn-at-startup "wl-paste" "-t" "text" "--watch" "clipman" "store" "--no-persist"
+spawn-at-startup "fcitx5"
+
+spawn-at-startup "swayidle" "-w" \
+    "before-sleep" "swaylock" \
+        "--screenshots" \
+        "--clock" \
+        "--indicator" \
+        "--indicator-radius" "100" \
+        "--indicator-thickness" "7" \
+        "--effect-blur" "7x5" \
+        "--effect-vignette" "0.5:0.5" \
+        "--ring-color" "bb00cc" \
+        "--key-hl-color" "880033" \
+        "--line-color" "00000000" \
+        "--inside-color" "00000088" \
+        "--separator-color" "00000000" \
+        "--grace" "2" \
+        "--fade-in" "1"
