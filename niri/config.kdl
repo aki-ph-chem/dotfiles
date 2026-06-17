@@ -10,7 +10,7 @@ input {
     }
     touchpad {
         tap
-        disable-while-typing
+        dwt
     }
 }
 
@@ -27,9 +27,10 @@ binds {
 
     // workspace scroll
     Mod+Comma { focus-workspace-previous; }
-    Mod+Period { focus-workspace-next; }
-    Mod+Home { focus-workspace-first; }
-    Mod+End { focus-workspace-last; }
+    Mod+Period { focus-workspace-down; }
+    Mod+Home { focus-workspace 1; }
+    Mod+Shift+Home { focus-column-first; }
+    Mod+Shift+End { focus-column-last; }
 
     // column navigation
     Mod+H { focus-column-left; }
@@ -40,8 +41,8 @@ binds {
     // move window/column
     Mod+Shift+H { move-column-left; }
     Mod+Shift+L { move-column-right; }
-    Mod+Shift+J { move-window-down-or-to-workspace; }
-    Mod+Shift+K { move-window-up-or-to-workspace; }
+    Mod+Shift+J { move-window-down-or-to-workspace-down; }
+    Mod+Shift+K { move-window-up-or-to-workspace-up; }
 }
 
 spawn-at-startup "bash" "-c" "waybar -c \"$HOME/dotfiles/niri/waybar/config\" -s \"$HOME/dotfiles/niri/waybar/style.css\""
