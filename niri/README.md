@@ -1,5 +1,11 @@
 # niri
 
+## how to launch
+
+```bash
+niri-session -l
+```
+
 ## config for niri
 
 - key bind
