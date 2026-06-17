@@ -44,6 +44,7 @@ binds {
     Mod+Shift+K { move-window-up-or-to-workspace; }
 }
 
+spawn-at-startup "bash" "-c" "waybar -c \"$HOME/dotfiles/niri/waybar/config\" -s \"$HOME/dotfiles/niri/waybar/style.css\""
 spawn-at-startup "waypaper" "--restore"
 spawn-at-startup "wl-paste" "-t" "text" "--watch" "clipman" "store" "--no-persist"
 spawn-at-startup "fcitx5"
