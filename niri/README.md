@@ -1,27 +1,27 @@
-# niri
+# Niri Config
 
-## how to launch
+## Launch
 
 ```bash
 niri-session -l
 ```
 
-## config for niri
+## Key Bindings
 
-- key bind
-    - mod -> Super key
-    - terminal -> mod + Return
-    - kill window -> mod + Shift + q
-    - rofi -show drun -> mod + z
-    - rofi -show run -> mod + d
-    - F1 -> pactl -- set-sink-mute @DEFAULT_SINK@ toggle
-    - F2 -> pactl -- set-sink-volume @DEFAULT_SINK@ -5%
-    - F3 -> pactl -- set-sink-volume @DEFAULT_SINK@ +5%
-    - F5 -> brightnessctl set 5%-
-    - F6 -> brightnessctl set 5%+
+- `mod` → Super key
+- **mod + Return** — terminal
+- **mod + Shift + q** — kill window
+- **mod + z** — rofi (drun)
+- **mod + d** — rofi (run)
+- **F1** — toggle mute
+- **F2** — volume -5%
+- **F3** — volume +5%
+- **F5** — brightness -5%
+- **F6** — brightness +5%
 
-- services 
-    - waypaper --restore
-    - wl-paste -t text --watch clipman store --no-persist
-    - swayidle -w
-    - fcitx5 &
+## Services
+
+- `waypaper --restore` — wallpaper
+- `wl-paste -t text --watch clipman store --no-persist` — clipboard manager
+- `swayidle -w` — idle management
+- `fcitx5 &` — input method
