@@ -26,6 +26,8 @@ binds {
     F5 { spawn "brightnessctl" "set" "5%-"; }
     F6 { spawn "brightnessctl" "set" "5%+"; }
 
+    Mod+Shift+C { spawn "niri" "msg" "reload-config"; }
+
     // workspace scroll
     Mod+Comma { focus-workspace-previous; }
     Mod+Period { focus-workspace-down; }
