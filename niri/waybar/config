@@ -1,6 +1,5 @@
 {
     "height": 10,
-    "width": 1912,
     "spacing": 2,
     "modules-left": ["niri/workspaces"],
     "modules-center": ["niri/window"],
