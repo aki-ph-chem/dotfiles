@@ -1,59 +1,46 @@
 # dotfiles
 
-The config files have become so cluttered that they have been consolidated into a single repository.
+Personal configuration files consolidated into a single repository.
 
-## code editor
+## Components
+
+### Shell
+
+- [bash](./bash) — `.bashrc` and `.bash_aliases`
+  - Requires `~/.git-prompt.sh` for the prompt:
+    ```bash
+    git clone https://github.com/git/git.git
+    cp git/contrib/completion/git-prompt.sh ~/.git-prompt.sh
+    ```
+    Or download from [git-prompt.sh](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh).
+
+### Editors
 
 - [Vim](./vim)
-- [Neovim](https://github.com/aki-ph-chem/neovim-config)(other repository)
+- [Neovim](https://github.com/aki-ph-chem/neovim-config) (separate repository)
 
-## shell
+### Terminal
 
-- [bash](./bash)
+- [Wezterm](./wezterm)
+- [Tmux](./tmux)
 
-必要なツール`~/.git-prompt.sh`(bashのプロンプトを表示させるため)
+### Window Managers
 
-```bash
-$ git clone https://github.com/git/git.git
-$ cp git/contrib/completion/git-prompt.sh .git-prompt.sh
-```
+- [Sway](./sway) — tiling Wayland compositor
+  - [Waybar](./sway/waybar) — status bar
+  - [Kanshi](./sway/kanshi) — display profile management
+- [Niri](./niri) — scrollable-tiling Wayland compositor
 
-もしくは`https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh`からダウンロードする。
+### Launcher / Session
 
-## terminal emulater
+- [Rofi](./rofi) — application launcher
+- [Wlogout](./wlogout) — logout screen
 
-- [wezterm](./wezterm)
-- [tmux](./tmux)
+### Systemd User Services
 
-## sway(tiling window manager)
+- [systemd_user](./systemd_user) — user-level systemd units (sway-session.target, kanshi.service)
 
-- [sway](./sway)
-    - [waybar](./sway/waybar)
-    - [kanshi](./sway/kanshi)
-
-- run kanshi as systemd service:(WIP)
-
-```bash
-$ ln -s <PATH to this repo>/systemd_user/sway-session.target "$HOME/.config/systemd/user"
-$ ln -s <PATH to this repo>/systemd_user/kanshi.service "$HOME/.config/systemd/user"
-```
-
-### rofi(lanucher)
-
-- [rofi](./rofi)
-
-### wlogout
-
-- install
-
-```bash
-yay -S wlogout
-```
-
-- config
-
-```bash
-ln -s <path to dis repository>/wlogout/ "$HOME/.config/wlogout/"
-```
-
-- [wlogout](./wlogout)
+  ```bash
+  ln -s "$PWD/systemd_user/sway-session.target" ~/.config/systemd/user/
+  ln -s "$PWD/systemd_user/kanshi.service" ~/.config/systemd/user/
+  ```
