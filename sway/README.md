@@ -1,48 +1,15 @@
-# sway config
+# Sway Config
 
-## cheat sheet
+## Cheat Sheet
 
-- Super + Enter
-
-terminalを起動
-
-- Super + n
-
-n 番目のworkspaceに移動
-
-- Super + r
-
-windowをリサイズするモードに入る
-
-リサイズは jで縦方向に拡大,kで縦方向に縮小
-hで横方向に縮小、lで横方向に拡大
-
-- Super + Shift + Space
-
-floatingとtailの切り変え
-
-- Alt + (h,l) or (j,k)
-
-floatの時に重なっているwindowの切り替え(h,l),(j,k)のどちらでもok
-
-stackの時は(j,k)
-
-タブモードのときは、(h,l)で切り替え
-
-- Super + s
-
-スタックモードへの切り替え
-
-- Super + w
-
-タブモードへの切り替え
-
-- Super + e
-
-タイル型の分割スタイルへの変更
-
-- Super + (b,v)
-
-v: 水平分割
-
-b: 垂直分割
+- **Super + Enter** — launch terminal
+- **Super + n** — switch to workspace n
+- **Super + r** — enter resize mode
+  - `j` / `k` — expand / shrink vertically
+  - `h` / `l` — shrink / expand horizontally
+- **Super + Shift + Space** — toggle floating / tiling
+- **Alt + (h,l) or (j,k)** — switch between overlapping windows in floating mode; in stacking mode use (j,k); in tab mode use (h,l)
+- **Super + s** — switch to stacking layout
+- **Super + w** — switch to tabbed layout
+- **Super + e** — switch to tiling layout
+- **Super + (b,v)** — horizontal (v) / vertical (b) split
