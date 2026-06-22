@@ -26,6 +26,8 @@ binds {
     F5 { spawn "brightnessctl" "set" "5%-"; }
     F6 { spawn "brightnessctl" "set" "5%+"; }
 
+    Print { spawn-sh "flameshot gui -p $HOME/Pictures/ScreenShot/"; }
+
     Mod+Shift+C { spawn "niri" "msg" "action" "load-config-file"; }
     Mod+W { maximize-window-to-edges; }
 
