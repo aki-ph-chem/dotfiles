@@ -36,6 +36,14 @@ binds {
     Mod+Shift+Home { focus-column-first; }
     Mod+Shift+End { focus-column-last; }
 
+    // workspace switching
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+
     // column navigation
     Alt+H { focus-column-left; }
     Alt+L { focus-column-right; }
