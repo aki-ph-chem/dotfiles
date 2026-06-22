@@ -68,7 +68,7 @@ layout {
         bottom -3
     }
 
-    default-column-width { proportion 0.6; }
+    default-column-width { proportion 0.5; }
 
     border {
         width 2
