@@ -26,7 +26,7 @@ binds {
     F5 { spawn "brightnessctl" "set" "5%-"; }
     F6 { spawn "brightnessctl" "set" "5%+"; }
 
-    Mod+Shift+C { spawn "niri" "msg" "reload-config"; }
+    Mod+Shift+C { spawn "niri" "msg" "action" "load-config-file"; }
 
     // workspace scroll
     Mod+Comma { focus-workspace-previous; }
@@ -46,6 +46,40 @@ binds {
     Mod+Shift+L { move-column-right; }
     Mod+Shift+J { move-window-down-or-to-workspace-down; }
     Mod+Shift+K { move-window-up-or-to-workspace-up; }
+}
+
+// Ask windows to omit client-side decorations so niri draws borders around them.
+prefer-no-csd
+layout {
+    gaps 5
+    struts {
+        left -3
+        right -3
+        top -3
+        bottom -3
+    }
+
+    border {
+        width 2
+        active-color "#45adad"
+        inactive-color "#505050"
+    }
+}
+
+blur {
+    passes 3
+    offset 2
+    noise 0.02
+    saturation 1.5
+}
+
+window-rule {
+    opacity 0.8
+    draw-border-with-background false
+    background-effect {
+        xray true
+        blur false 
+    }
 }
 
 spawn-at-startup "bash" "-c" "waybar -c \"$HOME/dotfiles/niri/waybar/config\" -s \"$HOME/dotfiles/niri/waybar/style.css\""
