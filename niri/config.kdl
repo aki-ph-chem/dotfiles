@@ -68,6 +68,8 @@ layout {
         bottom -3
     }
 
+    default-column-width { proportion 0.6; }
+
     border {
         width 2
         active-color "#45adad"
