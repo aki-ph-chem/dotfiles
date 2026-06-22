@@ -27,6 +27,7 @@ binds {
     F6 { spawn "brightnessctl" "set" "5%+"; }
 
     Mod+Shift+C { spawn "niri" "msg" "action" "load-config-file"; }
+    Mod+W { maximize-window-to-edges; }
 
     // workspace scroll
     Mod+Comma { focus-workspace-previous; }
