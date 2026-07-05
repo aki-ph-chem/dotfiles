@@ -116,3 +116,5 @@ spawn-at-startup "swayidle" "-w" \
         "--separator-color" "00000000" \
         "--grace" "2" \
         "--fade-in" "1"
+
+spawn-at-startup "systemctl" "--user" "start" "niri-session.target"
