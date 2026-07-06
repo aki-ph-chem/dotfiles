@@ -98,7 +98,6 @@ window-rule {
 spawn-at-startup "bash" "-c" "waybar -c \"$HOME/dotfiles/niri/waybar/config\" -s \"$HOME/dotfiles/niri/waybar/style.css\""
 spawn-at-startup "waypaper" "--restore"
 spawn-at-startup "wl-paste" "-t" "text" "--watch" "clipman" "store" "--no-persist"
-spawn-at-startup "fcitx5"
 
 spawn-at-startup "swayidle" "-w" \
     "before-sleep" "swaylock" \
